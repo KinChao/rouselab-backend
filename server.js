@@ -27,9 +27,7 @@ app.use('/api/peoples/', peopleRoutes)
 app.use('/api/user', userRoutes)
 app.use('/api/newss/', newsRoutes)
 
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static('frontend/build'));
-}
+
 
 
 app.get('/read', (req,res) => {
