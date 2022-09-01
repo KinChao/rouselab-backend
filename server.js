@@ -1,5 +1,4 @@
 require('dotenv').config()
-import PeoplePage from '../frontend/src/pages/people'
 import peopleModel from './models/peopleModel'
 
 const express = require('express')
