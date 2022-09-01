@@ -1,5 +1,6 @@
 require('dotenv').config()
-
+import PeoplePage from '../frontend/src/pages/people'
+import peopleModel from './models/peopleModel'
 
 const express = require('express')
 const mongoose = require('mongoose')
@@ -30,6 +31,19 @@ app.use('/api/newss/', newsRoutes)
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('frontend/build'));
 }
+
+
+app.get('/read', (req,res) => {
+  peopleModel.find({}, (err, result) => {
+    if (err) {
+      res.send(err)
+    } else {
+      res.send(result)
+    }
+  })
+
+})
+
 
 // connect do db
 mongoose.connect(process.env.MONGO_URI)
