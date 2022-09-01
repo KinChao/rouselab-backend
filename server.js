@@ -1,5 +1,5 @@
 require('dotenv').config()
-import peopleModel from './models/peopleModel'
+
 
 const express = require('express')
 const mongoose = require('mongoose')
@@ -30,16 +30,7 @@ app.use('/api/newss/', newsRoutes)
 
 
 
-app.get('/read', (req,res) => {
-  peopleModel.find({}, (err, result) => {
-    if (err) {
-      res.send(err)
-    } else {
-      res.send(result)
-    }
-  })
 
-})
 
 
 // connect do db
