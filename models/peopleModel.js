@@ -31,6 +31,6 @@ const peopleSchema = new Schema({
     selectedFile: {
       type: String
     } 
-})
+}, { timestamps: true })
 
 module.exports = mongoose.model('People', peopleSchema)
